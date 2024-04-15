@@ -1,17 +1,15 @@
-import java.util.Scanner;
-
 public class Question2 {
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
+        if (args.length != 2) {
+            System.out.println("Usage: java Question2 <height_in_meters> <weight_in_kilograms>");
+            return;
+        }
 
-        System.out.println("Enter your height in meters: ");
-        double height = in.nextDouble();
-
-        System.out.println("Enter your weight in kilograms: ");
-        double weight = in.nextDouble();
+        double height = Double.parseDouble(args[0]);
+        double weight = Double.parseDouble(args[1]);
 
         double bmi = weight / (height * height);
 
-        System.out.println("Your BMI is: " + bmi);
+        System.out.println(bmi);
     }
 }
